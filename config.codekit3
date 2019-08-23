@@ -1,31 +1,42 @@
 {
 "AAInfo": "This is a CodeKit 3 project config file. MODIFYING THE CONTENTS OF THIS FILE IS A POOR LIFE DECISION. Doing so will cause CodeKit to crash and/or corrupt your project. I know it looks like JSON, but it is *not*. Many numbers in this file are 64-bit long long bitFlags, which JSON does not support. These numbers *cannot* be treated as discrete values and if you attempt to parse this file as standard JSON with any public JSON parser, these values will be corrupted. This file is not backwards-compatible with CodeKit 1 or 2. For more information, see https://codekitapp.com/",
 "buildSteps": [
+	{
+		"name": "Process All Remaining Files and Folders",
+		"stepType": 1,
+		"uuidString": "BC90D78F-617E-4F0C-A24A-57484D444172"
+		}
 	],
 "creatorBuild": "31491",
 "files": {
+	"/node_modules": {
+		"ft": 65536,
+		"oA": 2,
+		"oAP": "/build/node_modules",
+		"oF": 0
+		},
 	"/pads.sass": {
 		"aP": 0,
 		"bl": 0,
-		"dP": 10,
+		"dP": 5,
 		"dS": 0,
 		"ft": 2,
 		"ma": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "/pads.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
 		},
-	"/polygrid.sass": {
+	"/polygrid_2.sass": {
 		"aP": 0,
 		"bl": 0,
-		"dP": 10,
+		"dP": 5,
 		"dS": 0,
 		"ft": 2,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "/polygrid.css",
+		"oAP": "/polygrid_2.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -38,7 +49,7 @@
 "projectAttributes": {
 	"creationDate": 588239548.89679694,
 	"displayValue": "model.polygrid_2",
-	"displayValueWasSetByUser": 0,
+	"displayValueWasSetByUser": 1,
 	"iconImageName": "brackets_gray",
 	"iconImageWasSetByUser": 0
 	},
@@ -2030,7 +2041,7 @@
 		"autoOutputPathStyle": 0,
 		"createSourceMap": 0,
 		"debugStyle": 0,
-		"decimalPrecision": 10,
+		"decimalPrecision": 5,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
 		"shouldRunBless": 0,
