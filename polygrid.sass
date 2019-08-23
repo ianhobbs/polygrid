@@ -1,0 +1,209 @@
+
+// A Polygrid Kit / codekit project.
+
+
+// * description * //
+
+// 	- 12 col responsive asymetric grid using ratio (1.414°) for % based columns
+//	- 18 classes 
+//	- see live demo at https://ianhobbsmedia.com.au/style.php
+
+
+// *  dependencies * //
+
+// 1 Codekit application.
+// 2 Modular scale
+// 3 Config
+
+
+
+// * Config * //
+
+//- @import '../node_modules/modularscale-sass/stylesheets/modularscale'
+
+// $lineHeight: 1.29
+
+
+// set up vars before you import
+
+// $bFontSize: 1.063em
+// $modularscale: ( base: $bFontSize, ratio: 1.414, a:(base: 1.063) )
+// $gutters: ms(2)
+
+
+$mobile: (min-width 320px)
+$ipad: (min-width 768px)
+$laptop: (min-width 1200px)
+$desktop: (min-width 1920px)
+$twok: (min-width 2100px)
+
+
+// $bFontSize: 1.063em
+// $modularscale: ( base: $bFontSize, ratio: 1.414, a:(base: 1.063) )
+// $gutters: ms(2)
+
+//- $figs: ( RX:0.25, R0:0.354, R1:0.5, R2:0.751, R3:0.998, R4:1.414, R5:1.999, R6:2.827, R7: 3.998 ) old method
+
+$figs: (RXXX:ms(-6, $thread: a),RXX:ms(-5, $thread: a), RX:ms(-4, $thread: a), R0:ms(-3, $thread: a), R1:ms(-2, $thread: a), R2:ms(-1, $thread: a), R3:ms(0, $thread: a), R4:ms(1, $thread: a), R5:ms(2, $thread: a), R6:ms(3, $thread: a), R7:ms(4, $thread: a))
+
+//  converts static values to percentages for fluid layouts. below
+
+@function calc-ratio($R)
+	@return percentage(map-get($figs,$R)*10/100)
+
+
+
+.grid-polycol_2
+	margin: auto
+	display: grid
+	grid-template-columns: 12px 1fr 12px
+	grid-template-rows: 11vh auto
+	margin-bottom: ms(-1)
+	grid-template-columns: ms(-1) repeat(10, 1fr) ms(-1)
+	grid-auto-rows:  minmax(ms(2), auto)
+	grid-auto-flow: column
+	grid-gap: ms(-2)
+	header
+		grid-column: 2 / 12
+		grid-row: 1 / 4
+	.head-wrap
+		grid-column: 1 / 13
+		grid-row: 1 / 3
+	.head-wrap-ih
+		grid-column: 1 / 13
+	.span2n5
+		grid-column: 2 / 12
+	.span2n7
+		grid-column: 2 / 12
+	.span3n8
+		grid-column: 2 / 12
+	.span4n9
+		grid-column: 2 / 12
+	.triA
+		grid-column: 2 / 12
+	.span5n10
+		grid-column: 2 / 12
+	.triB
+		grid-column: 2 / 12
+	.span8n11
+		grid-column: 2 / 12
+	.triC
+		grid-column: 2 / 12
+	.span9n12
+		grid-column: 2 / 12
+	.full
+		grid-column: 1 / -1
+	.triCrow2
+		grid-column: 2 / 12
+		grid-row-start: auto
+	.triCrow4
+		grid-column: 2 / 12
+		grid-row-start: auto
+	.triCrow6
+		grid-column: 2 / 12
+		grid-row-start: auto
+	.mid4n11, .mid5n12, .mid4n10, .span5n9
+		grid-column: 2 / 12
+	.span6n11
+		grid-column: 2 / 12
+	.span10n12
+		grid-column: 2 / 12
+
+	@include breakpoint($ipad)
+		grid-template-columns: ms(-1) calc-ratio(RX) calc-ratio(R1) calc-ratio(R2) calc-ratio(R2) calc-ratio(R1) calc-ratio(R3) calc-ratio(R2) calc-ratio(R1) 1fr calc-ratio(RX) ms(-1)
+		grid-gap: ms(-1)
+		grid-template-rows:  110px minmax(ms(2), auto)
+		header
+			grid-row: 1 / 2
+		.head-wrap-ih
+			grid-column: 2 / 12
+			height: 104px
+			top: 0
+			position: sticky
+		.span2n5
+			grid-column: 2 / 5
+		.span2n7
+			grid-column: 2 / 7
+		.span3n8
+			grid-column: 2 / 8
+		.span4n9
+			grid-column: 3 / 8
+		.mid4n11
+			grid-column: 3 / span 7
+		.mid4n10
+			grid-column: 3 / 10
+		.mid5n12
+			grid-column: 4 / span 5
+		.span5n10
+			grid-column: 5 / 11
+		.span5n9
+			grid-column: 5 / 9
+		.triA
+			grid-column: 2 / 6
+		.triB
+			grid-column: 5 / 10
+		.span8n11
+			grid-column: 8 / 11
+		.triC
+			grid-column: 8 / 11
+		.span9n12
+			grid-column: 8 / 12
+		.triCrow2
+			grid-column: 9 / 12
+			grid-row-start: 3
+		.triCrow4
+			grid-column: 9 / 12
+			grid-row-start: 5
+		.triCrow6
+			grid-column: 9 / 12
+			grid-row-start: 7
+		.span6n11
+			grid-column: 2 / 12
+		.span10n12
+			grid-column: 10 / 12
+	@include breakpoint($laptop)
+		grid-template-columns: 1fr calc-ratio(RX) calc-ratio(R1) calc-ratio(R3) calc-ratio(R2) calc-ratio(R1) calc-ratio(R1) calc-ratio(R3) calc-ratio(R4) calc-ratio(R2) calc-ratio(R1) 1fr
+		grid-gap: ms(0)
+		grid-template-rows:  115px minmax(ms(2), auto)
+		header
+			grid-column: 4 / 11
+			grid-row: 1 / 2
+		.head-wrap
+			grid-column: 2 / 12
+			grid-row: 1 / 2
+		.head-wrap-ih
+			grid-column: 2 / 11
+			height: 110px
+			top: 0
+		.span3n8
+			grid-column: 3 / 8
+		.span4n9
+			grid-column: 4 / 9
+		.mid4n11
+			grid-column: 4 / span 7
+		.mid4n10
+			grid-column: 4 / span 6
+		.mid5n12
+			grid-column: 5 / span 7
+		.span5n10
+			grid-column: 5 / 10
+		.triB
+			grid-column: 6 / 9
+		.triC
+			grid-column: 9 / 11
+		.triCrow2
+			grid-column: 9 / 11
+			grid-row-start: 3
+		.triCrow4
+			grid-column: 9 / 11
+			grid-row-start: 5
+		.triCrow6
+			grid-column: 9 / 11
+			grid-row-start: 7
+	@include breakpoint($desktop)
+		grid-template-columns: 1fr calc-ratio(RX) calc-ratio(R1) calc-ratio(R3) calc-ratio(R2) calc-ratio(RX) calc-ratio(R1) calc-ratio(R4) calc-ratio(R4) calc-ratio(R3)calc-ratio(R2) 1fr
+		width: 1920px
+
+
+
+

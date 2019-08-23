@@ -1,0 +1,43 @@
+
+//dependencies modular scale set up elsewhere
+
+
+.pad1
+	padding: ms(-2)
+	@include breakpoint($ipad)
+		padding: ms(-1)
+.pad2
+	padding: ms(-1)
+	@include breakpoint($ipad)
+		padding: ms(0)
+.pad3
+	padding: ms(1)
+	@include breakpoint($ipad)
+		padding: ms(2)
+.pad4
+	padding: ms(2)
+	@include breakpoint($ipad)
+		padding: ms(3)
+.pad5
+	padding: ms(3)
+	@include breakpoint($ipad)
+		padding: ms(4)
+.v_mar1
+	margin: ms(-2) 0
+	@include breakpoint($ipad)
+		margin: ms(-1) 0
+	@include breakpoint($laptop)
+		margin: ms(0) 0
+.v_mar2
+	margin: ms(-1) 0
+	@include breakpoint($ipad)
+		margin: ms(0) 0
+	@include breakpoint($laptop)
+		margin: ms(1) 0
+.v_mar3
+	margin: ms(1) 0
+	@include breakpoint($ipad)
+		margin: ms(2) 0
+	@include breakpoint($laptop)
+		margin: ms(3) 0
+
