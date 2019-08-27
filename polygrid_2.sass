@@ -56,7 +56,7 @@ $figs: (RXXX:ms(-6, $thread: a),RXX:ms(-5, $thread: a), RX:ms(-4, $thread: a), R
 	grid-template-rows: 11vh auto
 	margin-bottom: ms(-1)
 	grid-template-columns: ms(-1) repeat(10, 1fr) ms(-1)
-	grid-auto-rows:  minmax(ms(2), auto)
+	grid-auto-rows:  minmax(ms(3), auto)
 	grid-auto-flow: column
 	grid-column-gap: ms(-2)
 	.span2n5
@@ -83,13 +83,13 @@ $figs: (RXXX:ms(-6, $thread: a),RXX:ms(-5, $thread: a), RX:ms(-4, $thread: a), R
 		grid-column: 1 / -1
 	.triCrow2
 		grid-column: 2 / 12
-		grid-row-start: auto
+		grid-row-start: unset
 	.triCrow4
 		grid-column: 2 / 12
-		grid-row-start: auto
+		grid-row-start: unset
 	.triCrow6
 		grid-column: 2 / 12
-		grid-row-start: auto
+		grid-row-start: unset
 	.mid4n11, .mid5n12, .mid4n10, .span5n9
 		grid-column: 2 / 12
 	.span6n11
@@ -100,7 +100,7 @@ $figs: (RXXX:ms(-6, $thread: a),RXX:ms(-5, $thread: a), RX:ms(-4, $thread: a), R
 	@include breakpoint($ipad)
 		grid-template-columns: ms(-1) calc-ratio(RX) calc-ratio(R1) calc-ratio(R2) calc-ratio(R2) calc-ratio(R1) calc-ratio(R3) calc-ratio(R2) calc-ratio(R1) 1fr calc-ratio(RX) ms(-1)
 		grid-column-gap: ms(-1)
-		grid-template-rows:  minmax(ms(2), auto)
+		grid-template-rows:  minmax(ms(4), auto)
 		.span2n5
 			grid-column: 2 / 5
 		.span2n7
