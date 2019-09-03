@@ -79,7 +79,6 @@ $figs: (RXXX:ms(-6, $thread: a),RXX:ms(-5, $thread: a), RX:ms(-4, $thread: a), R
 		grid-column: 2 / 12
 	.waist611
 		grid-column: 1 / -1
-
 	@include breakpoint($ipad)
 		grid-template-columns: ms(-2) calc-ratio(RX) calc-ratio(R1) calc-ratio(R2) calc-ratio(R3) calc-ratio(R1) calc-ratio(R3) calc-ratio(R2) calc-ratio(R4) 1fr calc-ratio(RX) ms(-2)
 		grid-column-gap: ms(-2)
@@ -156,6 +155,34 @@ $figs: (RXXX:ms(-6, $thread: a),RXX:ms(-5, $thread: a), RX:ms(-4, $thread: a), R
 	@include breakpoint($desktop)
 		grid-template-columns: 1fr calc-ratio(RX) calc-ratio(R1) calc-ratio(R3) calc-ratio(R2) calc-ratio(RX) calc-ratio(R1) calc-ratio(R3) calc-ratio(R4) calc-ratio(R3)calc-ratio(R2) 1fr
 		width: 1920px
+
+
+// a flex / grid subgrid
+
+.flex_poly_2
+	margin: auto
+	display: grid
+	grid-template-columns: ms(0) repeat(10, 1fr) ms(0)
+	grid-column-gap: 0
+	.fp4n11
+		grid-column: 2 / 11
+	.fp10
+		grid-column: 2 / 11
+	@include breakpoint($ipad)
+		grid-template-columns: ms(-2) calc-ratio(RX) calc-ratio(R1) calc-ratio(R2) calc-ratio(R3) calc-ratio(R1) calc-ratio(R3) calc-ratio(R2) calc-ratio(R4) 1fr calc-ratio(RX) ms(-2)
+		grid-column-gap: ms(-2)
+		.fp4n11
+			grid-column: 3 / 10
+		.fp10
+			grid-column: 10
+	@include breakpoint($laptop)
+		grid-template-columns: 1fr calc-ratio(RX) calc-ratio(R1) calc-ratio(R3) calc-ratio(R2) calc-ratio(R1) calc-ratio(R1) calc-ratio(R3) calc-ratio(R4) calc-ratio(R2) calc-ratio(R1) 1fr
+		grid-column-gap: ms(0)
+		.fp4n11
+			grid-column: 4 / 11
+	@include breakpoint($desktop)
+		grid-template-columns: 1fr calc-ratio(RX) calc-ratio(R1) calc-ratio(R3) calc-ratio(R2) calc-ratio(RX) calc-ratio(R1) calc-ratio(R3) calc-ratio(R4) calc-ratio(R3)calc-ratio(R2) 1fr
+
 
 
 
