@@ -168,8 +168,7 @@ $figs: (RXXX:ms(-6, $thread: a),RXX:ms(-5, $thread: a), RX:ms(-4, $thread: a), R
 		grid-template-columns: 1fr calc-ratio(RX) calc-ratio(R1) calc-ratio(R3) calc-ratio(R2) calc-ratio(RX) calc-ratio(R1) calc-ratio(R3) calc-ratio(R4) calc-ratio(R3)calc-ratio(R2) 1fr
 		width: 1920px
 
-
-// a flex / grid subgrid
+// a grid subgrid
 
 .flex_poly_2
 	margin: auto
@@ -196,6 +195,8 @@ $figs: (RXXX:ms(-6, $thread: a),RXX:ms(-5, $thread: a), RX:ms(-4, $thread: a), R
 		grid-template-columns: 1fr calc-ratio(RX) calc-ratio(R1) calc-ratio(R3) calc-ratio(R2) calc-ratio(RX) calc-ratio(R1) calc-ratio(R3) calc-ratio(R4) calc-ratio(R3)calc-ratio(R2) 1fr
 
 
+$measures: ('.pad-2':ms(-2), '.pad-1':ms(-1), '.pad0':ms(0), '.pad1':ms(1), '.pad2':ms(2), '.pad3':ms(3), '.pad4':ms(4), '.pad5':ms(5), '.pad6':ms(6))
 
-
-
+@each $elem, $colorTheme in $measures
+	#{$elem}
+		padding: $colorTheme
