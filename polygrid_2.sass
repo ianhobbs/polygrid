@@ -59,6 +59,8 @@ $figs: (RXXX:ms(-6, $thread: a),RXX:ms(-5, $thread: a), RX:ms(-4, $thread: a), R
 	grid-template-columns: ms(0) repeat(10, 1fr) ms(0)
 	grid-column-gap: 0
 	width: 100%
+	.fullblock
+		grid-column: 1 / -1
 	.span2n5, .span2n7, .span3n8, .span4n9, .triA, .span5n10, .triB, .span8n11, .triC, .span9n12, .span7n10,.span7n11
 		grid-column: 2 / 12
 	.full
@@ -176,6 +178,10 @@ $figs: (RXXX:ms(-6, $thread: a),RXX:ms(-5, $thread: a), RX:ms(-4, $thread: a), R
 
 $measures: ('.pad-2':ms(-2), '.pad-1':ms(-1), '.pad0':ms(0), '.pad1':ms(1), '.pad2':ms(2), '.pad3':ms(3), '.pad4':ms(4), '.pad5':ms(5), '.pad6':ms(6))
 
-@each $elem, $colorTheme in $measures
+@each $elem, $sz in $measures
 	#{$elem}
-		padding: $colorTheme
+		padding: $sz
+
+.null
+	padding: 0
+	margin: 0

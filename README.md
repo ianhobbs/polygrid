@@ -10,6 +10,24 @@ This is my first grid solution called polygrid.
 
 ### How do I get set up? ###
 
+
+
+*  *  * Description
+
+- 12 col responsive asymetric grid using ratio (1.414°) for % based columns
+- 18 classes 
+- see live demo at https://ianhobbsmedia.com.au/style.php
+- version 2 removes the pesky header and rows
+
+
+*  *  * Dependencies
+
+1 Codekit application.
+2 Modular scale
+3 Config
+
+*  *  *  Config
+
 * Summary of set up
 
 Use codekit frameworks to pull a copy into the project.
