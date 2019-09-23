@@ -28,7 +28,6 @@
 // note $ a base is a unitless copy of the font unit so that the calculator can do its thing
 
 $bFontSize: 1.063em
-
 $modularscale: (base: $bFontSize, ratio: 1.414, a:(base: 1.063))
 
 
@@ -75,6 +74,8 @@ $figs: (RXXX:ms(-6, $thread: a),RXX:ms(-5, $thread: a), RX:ms(-4, $thread: a), R
 		grid-column: 2 / 12
 	.waist611
 		grid-column: 1 / -1
+	.span2
+		grid-column: 2 / 12
 	@include breakpoint($ipad)
 		grid-template-columns: ms(-2) calc-ratio(RX) calc-ratio(R1) calc-ratio(R2) calc-ratio(R3) calc-ratio(R1) calc-ratio(R3) calc-ratio(R2) calc-ratio(R4) 1fr calc-ratio(RX) ms(-2)
 		grid-column-gap: ms(-2)
@@ -118,6 +119,10 @@ $figs: (RXXX:ms(-6, $thread: a),RXX:ms(-5, $thread: a), RX:ms(-4, $thread: a), R
 			grid-column: 2 / 12
 		.span10n12
 			grid-column: 10 / 12
+		.span2
+			grid-column: span 2
+		.span3
+			grid-column: span 3
 	@include breakpoint($laptop)
 		grid-template-columns: 1fr calc-ratio(RX) calc-ratio(R1) calc-ratio(R3) calc-ratio(R2) calc-ratio(R1) calc-ratio(R1) calc-ratio(R3) calc-ratio(R4) calc-ratio(R2) calc-ratio(R1) 1fr
 		grid-column-gap: ms(0)
@@ -176,11 +181,19 @@ $figs: (RXXX:ms(-6, $thread: a),RXX:ms(-5, $thread: a), RX:ms(-4, $thread: a), R
 		grid-template-columns: 1fr calc-ratio(RX) calc-ratio(R1) calc-ratio(R3) calc-ratio(R2) calc-ratio(RX) calc-ratio(R1) calc-ratio(R3) calc-ratio(R4) calc-ratio(R3)calc-ratio(R2) 1fr
 
 
-$measures: ('.pad-2':ms(-2), '.pad-1':ms(-1), '.pad0':ms(0), '.pad1':ms(1), '.pad2':ms(2), '.pad3':ms(3), '.pad4':ms(4), '.pad5':ms(5), '.pad6':ms(6))
+$measures: ('.pad02':ms(-2), '.pad01':ms(-1), '.pad0':ms(0), '.pad1':ms(1), '.pad2':ms(2), '.pad3':ms(3), '.pad4':ms(4), '.pad5':ms(5), '.pad6':ms(6))
+
+$push: ('.push02':ms(-2), '.push01':ms(-1), '.push0':ms(0), '.push1':ms(1), '.push2':ms(2), '.push3':ms(3), '.push4':ms(4))
 
 @each $elem, $sz in $measures
 	#{$elem}
 		padding: $sz
+
+
+@each $elem, $sz in $push
+	#{$elem}
+		margin-bottom: $sz
+
 
 .null
 	padding: 0
