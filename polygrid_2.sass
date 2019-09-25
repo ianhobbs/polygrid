@@ -76,6 +76,8 @@ $figs: (RXXX:ms(-6, $thread: a),RXX:ms(-5, $thread: a), RX:ms(-4, $thread: a), R
 		grid-column: 1 / -1
 	.span2
 		grid-column: 2 / 12
+	.span2n12
+		grid-column: 2 / 12
 	@include breakpoint($ipad)
 		grid-template-columns: ms(-2) calc-ratio(RX) calc-ratio(R1) calc-ratio(R2) calc-ratio(R3) calc-ratio(R1) calc-ratio(R3) calc-ratio(R2) calc-ratio(R4) 1fr calc-ratio(RX) ms(-2)
 		grid-column-gap: ms(-2)
@@ -83,6 +85,8 @@ $figs: (RXXX:ms(-6, $thread: a),RXX:ms(-5, $thread: a), RX:ms(-4, $thread: a), R
 			grid-column: 2 / 5
 		.span2n7
 			grid-column: 2 / 7
+		.span2n12
+			grid-column: 2 / 12
 		.span3n8
 			grid-column: 3 / 8
 		.span4n9
