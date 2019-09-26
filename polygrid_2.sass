@@ -60,7 +60,7 @@ $figs: (RXXX:ms(-6, $thread: a),RXX:ms(-5, $thread: a), RX:ms(-4, $thread: a), R
 	width: 100%
 	.fullblock
 		grid-column: 1 / -1
-	.span2n5, .span2n7, .span3n8, .span4n9, .triA, .span5n10, .triB, .span8n11, .triC, .span9n12, .span7n10,.span7n11
+	.span2n5, .span2n6, .span2n7, .span3n7, .span3n8, .span4n8, .span4n9, .triA, .span5n10, .triB, .span8n11, .triC, .span9n12, .span7n10, .span7n11, .x13
 		grid-column: 2 / 12
 	.full
 		grid-column: 1 / -1
@@ -80,15 +80,21 @@ $figs: (RXXX:ms(-6, $thread: a),RXX:ms(-5, $thread: a), RX:ms(-4, $thread: a), R
 		grid-column: 2 / 12
 	@include breakpoint($ipad)
 		grid-template-columns: ms(-2) calc-ratio(RX) calc-ratio(R1) calc-ratio(R2) calc-ratio(R3) calc-ratio(R1) calc-ratio(R3) calc-ratio(R2) calc-ratio(R4) 1fr calc-ratio(RX) ms(-2)
-		grid-column-gap: ms(-2)
+		grid-column-gap: ms(-1)
 		.span2n5
 			grid-column: 2 / 5
+		.span2n6
+			grid-column: 2 / 6
 		.span2n7
 			grid-column: 2 / 7
 		.span2n12
 			grid-column: 2 / 12
+		.span3n7
+			grid-column: 3 / 7
 		.span3n8
 			grid-column: 3 / 8
+		.span4n8
+			grid-column: 4 / 8
 		.span4n9
 			grid-column: 4 / 9
 		.mid4n11
@@ -127,9 +133,11 @@ $figs: (RXXX:ms(-6, $thread: a),RXX:ms(-5, $thread: a), RX:ms(-4, $thread: a), R
 			grid-column: span 2
 		.span3
 			grid-column: span 3
+		.x13
+			grid-column: 13
 	@include breakpoint($laptop)
 		grid-template-columns: 1fr calc-ratio(RX) calc-ratio(R1) calc-ratio(R3) calc-ratio(R2) calc-ratio(R1) calc-ratio(R1) calc-ratio(R3) calc-ratio(R4) calc-ratio(R2) calc-ratio(R1) 1fr
-		grid-column-gap: ms(0)
+		grid-column-gap: ms(1)
 		.span3n8
 			grid-column: 3 / 8
 		.span4n9
@@ -156,6 +164,7 @@ $figs: (RXXX:ms(-6, $thread: a),RXX:ms(-5, $thread: a), RX:ms(-4, $thread: a), R
 			grid-column: 7 / 11
 	@include breakpoint($desktop)
 		grid-template-columns: 1fr calc-ratio(RX) calc-ratio(R1) calc-ratio(R3) calc-ratio(R2) calc-ratio(RX) calc-ratio(R1) calc-ratio(R3) calc-ratio(R4) calc-ratio(R3)calc-ratio(R2) 1fr
+		grid-column-gap: ms(2)
 		width: 1920px
 
 // a grid subgrid
@@ -189,6 +198,8 @@ $measures: ('.pad02':ms(-2), '.pad01':ms(-1), '.pad0':ms(0), '.pad1':ms(1), '.pa
 
 $push: ('.push02':ms(-2), '.push01':ms(-1), '.push0':ms(0), '.push1':ms(1), '.push2':ms(2), '.push3':ms(3), '.push4':ms(4))
 
+$pull: ('.pulldown02':ms(-2), '.pulldown01':ms(-1), '.pulldown0':ms(0), '.pulldown1':ms(1), '.pulldown2':ms(2), '.pulldown3':ms(3), '.pulldown4':ms(4))
+
 @each $elem, $sz in $measures
 	#{$elem}
 		padding: $sz
@@ -197,6 +208,10 @@ $push: ('.push02':ms(-2), '.push01':ms(-1), '.push0':ms(0), '.push1':ms(1), '.pu
 @each $elem, $sz in $push
 	#{$elem}
 		margin-bottom: $sz
+
+@each $elem, $sz in $pull
+	#{$elem}
+		margin-top: $sz
 
 
 .null
