@@ -38,9 +38,6 @@ $laptop: (min-width 1200px)
 $desktop: (min-width 1920px)
 $twok: (min-width 2100px)
 
-
-// $bFontSize: 1.063em
-// $modularscale: ( base: $bFontSize, ratio: 1.414, a:(base: 1.063) )
 // $gutters: ms(2)
 
 //- $figs: ( RX:0.25, R0:0.354, R1:0.5, R2:0.751, R3:0.998, R4:1.414, R5:1.999, R6:2.827, R7: 3.998 ) old method
@@ -58,6 +55,8 @@ $figs: (RXXX:ms(-6, $thread: a),RXX:ms(-5, $thread: a), RX:ms(-4, $thread: a), R
 	grid-template-columns: ms(0) repeat(10, 1fr) ms(0)
 	grid-column-gap: 0
 	width: 100%
+	grid-auto-rows: minmax(90px, auto)
+	grid-auto-flow: dense
 	.fullblock
 		grid-column: 1 / -1
 	.full
@@ -80,6 +79,12 @@ $figs: (RXXX:ms(-6, $thread: a),RXX:ms(-5, $thread: a), RX:ms(-4, $thread: a), R
 		grid-column: 2 / 12
 	.span1n5
 		grid-column: 2 / 12
+	.row1
+		grid-row: 1
+	.row1n2
+		grid-row: 1 / 2
+	.row2
+		grid-row: 2
 	@include breakpoint($ipad)
 		grid-template-columns: 20px 1fr calc-ratio(R1) calc-ratio(RX) calc-ratio(RXX) calc-ratio(R1) calc-ratio(R2) calc-ratio(R2) 1fr 1fr calc-ratio(RX) 36px
 		grid-column-gap: ms(1)
@@ -142,7 +147,7 @@ $figs: (RXXX:ms(-6, $thread: a),RXX:ms(-5, $thread: a), RX:ms(-4, $thread: a), R
 			grid-column: 1 / 6
 			padding-left: ms(1)
 	@include breakpoint($laptop)
-		grid-template-columns: ms(3) ms(4) calc-ratio(RX) calc-ratio(R2) calc-ratio(R1) 1fr calc-ratio(R1) calc-ratio(R2) calc-ratio(R4) calc-ratio(R2) calc-ratio(RX) 68px
+		grid-template-columns: ms(2) ms(4) calc-ratio(RX) calc-ratio(R2) calc-ratio(R1) 1fr calc-ratio(R1) calc-ratio(R2) calc-ratio(R4) calc-ratio(R2) ms(2) 68px
 		grid-column-gap: ms(2)
 		grid-template-rows: auto
 		.span3n8
@@ -175,7 +180,7 @@ $figs: (RXXX:ms(-6, $thread: a),RXX:ms(-5, $thread: a), RX:ms(-4, $thread: a), R
 			grid-column: 1 / 5
 			padding-left: ms(2)
 	@include breakpoint($desktop)
-		grid-template-columns: 20px calc-ratio(RXX) calc-ratio(R1) calc-ratio(R3) calc-ratio(R2) 1fr calc-ratio(R1) calc-ratio(R3) calc-ratio(R4) calc-ratio(R3) calc-ratio(R1) 78px
+		grid-template-columns: 20px calc-ratio(RXX) calc-ratio(R1) calc-ratio(R2) calc-ratio(R2) 1fr calc-ratio(R1) calc-ratio(R3) calc-ratio(R4) calc-ratio(R3) calc-ratio(R1) 78px
 		grid-column-gap: ms(2)
 		width: 1920px
 
