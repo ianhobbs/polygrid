@@ -49,6 +49,8 @@ $figs: (RXXX:ms(-6, $thread: a),RXX:ms(-5, $thread: a), RX:ms(-4, $thread: a), R
 @function calc-ratio($R)
 	@return percentage(map-get($figs,$R)*10/100)
 
+/* purgecss start ignore */ 
+
 .grid-polycol_2
 	margin: auto
 	display: grid
@@ -57,6 +59,7 @@ $figs: (RXXX:ms(-6, $thread: a),RXX:ms(-5, $thread: a), RX:ms(-4, $thread: a), R
 	width: 100%
 	grid-auto-rows: minmax(90px, auto)
 	grid-auto-flow: dense
+	grid-row-gap: ms(-1)
 	.fullblock
 		grid-column: 1 / -1
 	.full
@@ -94,6 +97,7 @@ $figs: (RXXX:ms(-6, $thread: a),RXX:ms(-5, $thread: a), RX:ms(-4, $thread: a), R
 		grid-template-columns: 20px 1fr calc-ratio(R1) calc-ratio(RX) calc-ratio(RXX) calc-ratio(R1) calc-ratio(R2) calc-ratio(R2) 1fr 1fr calc-ratio(RX) 36px
 		grid-column-gap: ms(1)
 		grid-auto-rows: minmax(90px, auto)
+		grid-row-gap: ms(0)
 		.span2n5
 			grid-column: 2 / 5
 		.span2n6
@@ -190,6 +194,7 @@ $figs: (RXXX:ms(-6, $thread: a),RXX:ms(-5, $thread: a), RX:ms(-4, $thread: a), R
 	@include breakpoint($desktop)
 		grid-template-columns: 20px calc-ratio(RXX) calc-ratio(R1) calc-ratio(R2) calc-ratio(R2) 1fr calc-ratio(R1) calc-ratio(R3) calc-ratio(R4) calc-ratio(R3) calc-ratio(R1) 78px
 		grid-column-gap: ms(2)
+		grid-row-gap: ms(2)
 		width: 1920px
 
 // a grid subgrid
@@ -317,3 +322,5 @@ $pull: ('.pulldown02':ms(-2), '.pulldown01':ms(-1), '.pulldown0':ms(0), '.pulldo
 .null
 	padding: 0
 	margin: 0
+	
+/* purgecss end ignore */
