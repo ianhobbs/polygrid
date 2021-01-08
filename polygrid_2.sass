@@ -159,7 +159,7 @@ $figs: (RXXX:ms(-6, $thread: a),RXX:ms(-5, $thread: a), RX:ms(-4, $thread: a), R
 			grid-column: 1 / 6
 			padding-left: ms(1)
 	@include breakpoint($laptop)
-		grid-template-columns: ms(2) ms(4) calc-ratio(RX) calc-ratio(R2) calc-ratio(R1) 1fr calc-ratio(R1) calc-ratio(R2) calc-ratio(R4) calc-ratio(R2) ms(2) 68px
+		grid-template-columns: ms(2) ms(4) calc-ratio(RX) calc-ratio(R2) calc-ratio(R1) 1fr calc-ratio(R1) calc-ratio(R2) calc-ratio(R3) calc-ratio(R2) ms(2) 68px
 		grid-column-gap: ms(2)
 		grid-template-rows: auto
 		.span3n7
@@ -293,7 +293,7 @@ $measures: ('.pad02':ms(-2), '.pad01':ms(-1), '.pad0':ms(0), '.pad1':ms(1), '.pa
 
 $push: ('.push02':ms(-2), '.push01':ms(-1), '.push0':ms(0), '.push1':ms(1), '.push2':ms(2), '.push3':ms(3), '.push4':ms(4))
 
-$padtop: ('.padtop02':ms(-2), '.padtop01':ms(-1), '.padtop0':ms(0), '.padtop1':ms(1), '.padtop2':ms(2), '.padtop3':ms(3), '.padtop4':ms(4))
+$padtop: ('.padtop02':ms(-2), '.padtop01':ms(-1), '.padtop0':ms(0), '.padtop1':ms(1), '.padtop2':ms(2), '.padtop3':ms(3),'.padtop4':ms(4),'.padtop5':ms(5))
 
 $pull: ('.pulldown02':ms(-2), '.pulldown01':ms(-1), '.pulldown0':ms(0), '.pulldown1':ms(1), '.pulldown2':ms(2), '.pulldown3':ms(3), '.pulldown4':ms(4),'.pulldown5':ms(5),'.pulldown6':ms(6))
 
@@ -301,32 +301,41 @@ $pull: ('.pulldown02':ms(-2), '.pulldown01':ms(-1), '.pulldown0':ms(0), '.pulldo
 
 @each $elem, $sz in $measures
 	#{$elem}
-		padding: $sz 0 $sz 0
+		padding: $sz * 0.1
 		@include breakpoint($ipad)
+			padding: $sz * 0.3
+		@include breakpoint($laptop)
 			padding: $sz
 
 // push the content below
-
 @each $elem, $sz in $push
 	#{$elem}
-		margin-bottom: $sz
+		margin-bottom: $sz * 0.1
+		@include breakpoint($ipad)
+			margin-bottom: $sz * 0.3
+		@include breakpoint($laptop)
+			margin-bottom: $sz
 
 //push the content above
 @each $elem, $sz in $pull
 	#{$elem}
-		margin-top: $sz * 0.6
+		margin-top: $sz * 0.1
 		@include breakpoint($ipad)
+			margin-top: $sz * 0.3
+		@include breakpoint($laptop)
 			margin-top: $sz
 // pad the top content
 @each $elem, $sz in $padtop
 	#{$elem}
-		padding-top: $sz * 0.6
+		padding-top: $sz * 0.1
 		@include breakpoint($ipad)
+			padding-top: $sz * 0.3
+		@include breakpoint($laptop)
 			padding-top: $sz
 
 
 .null
 	padding: 0
 	margin: 0
-	
+
 /* purgecss end ignore */
