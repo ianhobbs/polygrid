@@ -27,9 +27,8 @@
 
 // note $ a base is a unitless copy of the font unit so that the calculator can do its thing
 
-$bFontSize: 1.063em
+$bFontSize: 17px
 $modularscale: (base: $bFontSize, ratio: 1.414, a:(base: 1.063))
-
 
 
 $mobile: (min-width 320px)
@@ -97,7 +96,7 @@ $figs: (RXXX:ms(-6, $thread: a),RXX:ms(-5, $thread: a), RX:ms(-4, $thread: a), R
 		grid-template-columns: 20px 1fr calc-ratio(R1) calc-ratio(RX) calc-ratio(RXX) calc-ratio(R1) calc-ratio(R2) calc-ratio(R2) 1fr 1fr calc-ratio(RX) 36px
 		grid-column-gap: ms(1)
 		grid-auto-rows: minmax(90px, auto)
-		grid-row-gap: ms(0)
+		grid-row-gap: ms(1)
 
 		// will not change in the next level
 		.span2n5
@@ -162,6 +161,7 @@ $figs: (RXXX:ms(-6, $thread: a),RXX:ms(-5, $thread: a), RX:ms(-4, $thread: a), R
 		grid-template-columns: ms(2) ms(4) calc-ratio(RX) calc-ratio(R2) calc-ratio(R1) 1fr calc-ratio(R1) calc-ratio(R2) calc-ratio(R3) calc-ratio(R2) ms(2) 68px
 		grid-column-gap: ms(2)
 		grid-template-rows: auto
+		grid-row-gap: ms(2)
 		.span3n7
 			grid-column: 3 / 7
 		.span3n8
