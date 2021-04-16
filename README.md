@@ -1,10 +1,17 @@
 # README #
 
 This is my first grid solution called polygrid.
+This is now depreciated and maintained for legacy projects.
+If you see a build thats what was going on. 
+
+
 
 ### What is this repository for? ###
 
-* Quick summary
+Initially developed as a universal scaling grid project.
+Developed for cementa initally and versioned in a number of projects 2019 and 20120.
+
+
 * Version 1.0
 * [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
 
