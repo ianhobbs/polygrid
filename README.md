@@ -2,7 +2,16 @@
 
 This is my first grid solution called polygrid.
 This is now depreciated and maintained for legacy projects.
-If you see a build thats what was going on. 
+
+This remains as a implementation of modular scale.
+
+Much of the modualr scale work is better implemented in 
+https://utopia.fyi/
+
+Whats good about Utopia? Implementing css --vars integrates well with js injection.
+
+Utopia is missing a grid though so expect a merge of this Utopia's of implementaion of modular scale with
+some bits of this grid in a related repo. Polygrid-6
 
 
 
@@ -17,7 +26,7 @@ Developed for cementa initally and versioned in a number of projects 2019 and 20
 
 ### How do I get set up? ###
 
-
+Just chuck it in.
 
 *  *  * Description
 
